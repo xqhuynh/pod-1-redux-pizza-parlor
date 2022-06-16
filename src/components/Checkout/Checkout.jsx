@@ -1,6 +1,14 @@
 
 
 function Checkout (){
+
+    function onCheckout(){
+        // [] post route to the DB 
+        // [] confirmation window 'order submitted!'
+        // [] clear cart reducer
+        // [] navigate back to the home page 
+    };
+
     return(
         <>
             <h2>Step 3: Checkout</h2>
@@ -27,13 +35,18 @@ function Checkout (){
                     </tr>
                 </tbody>
             </table>
+
+            <h4> Total: </h4>
+
+            <button 
+                type='submit'
+                onClick={onCheckout}
+            >
+                CHECKOUT
+            </button>
         </>
     )
 }
 
 export default Checkout; 
 
-// [] post route to the DB 
-// [] confirmation window 'order submitted!'
-// [] clear cart reducer
-// [] navigate back to the home page 
