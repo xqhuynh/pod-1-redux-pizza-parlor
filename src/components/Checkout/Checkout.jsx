@@ -3,13 +3,16 @@
 function Checkout (){
 
     function onCheckout(){
+        window.alert("Order Submitted!");
         // [] post route to the DB 
-        // [] confirmation window 'order submitted!'
         // [] clear cart reducer
         // [] navigate back to the home page 
     };
 
     return(
+
+        // [] 
+
         <>
             <h2>Step 3: Checkout</h2>
             <p> Customer Name</p>
