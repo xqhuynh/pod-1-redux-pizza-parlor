@@ -16,7 +16,6 @@ const pizzaList = (state = [], action) => {
     return state;
 }
 
-
 const orderInformation = (state = [], action) => {
     switch(action.type){
         case 'GET_ORDER_INFORMATION':
@@ -24,6 +23,7 @@ const orderInformation = (state = [], action) => {
     }
     return state;
 }
+
 // checkout reducer
 const cart = (state = [], action) => {
     switch (action.type) {
