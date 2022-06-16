@@ -8,14 +8,16 @@ function PizzaList() {
     return (
         <>
             <h3>Pizza List Test</h3>
-            <ul>
-                {pizzaList.map((pizzaItem) => 
-                <li key={pizzaItem.id}>
-                {pizzaItem.name}
-                {pizzaItem.description}
-                {pizzaItem.price}
-                </li>)}
-            </ul>
+            <div className="pizza-container">
+                {pizzaList.map((pizza) => 
+                <div className="pizza-card"key={pizza.id}>
+                  <img className="picture" src={pizza.image_path} />
+                    <h3 className="pizza-name">{pizza.name}</h3>
+                    <p>{pizza.description}</p>
+                    <p className="pizza-price">{pizza.price}</p>
+                    <button className="pizza-button">Add</button>
+                </div>)}
+            </div>
         </>
     )
 }
