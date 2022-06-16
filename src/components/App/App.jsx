@@ -7,7 +7,7 @@ import Checkout from '../Checkout/Checkout';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 // import components
-import PizzaList from '../Home/Home';
+import PizzaList from '../PizzaList/PizzaList';
 
 import Admin from '../Admin/Admin';
 
@@ -50,19 +50,10 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-
-
-
+      <PizzaList /> 
       <Checkout />
-  
-
-
-      
-       <CustomerInfoForm/>
-
-      <PizzaList />  
+      <CustomerInfoForm/>
       <Admin />
-    
 
     </div>
   );

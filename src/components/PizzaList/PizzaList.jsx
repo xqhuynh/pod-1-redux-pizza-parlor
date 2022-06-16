@@ -8,6 +8,14 @@ function PizzaList() {
     return (
         <>
             <h3>Pizza List Test</h3>
+            <ul>
+                {pizzaList.map((pizzaItem) => 
+                <li key={pizzaItem.id}>
+                {pizzaItem.name}
+                {pizzaItem.description}
+                {pizzaItem.price}
+                </li>)}
+            </ul>
         </>
     )
 }
