@@ -11,7 +11,9 @@ function App() {
   // call useDispatch 
   const dispatch = useDispatch();
   // bring in useEffect to display pizza list 'fetchPizza(); when page loads
-  useEffect(() => {fetchPizza(); }, [])
+  useEffect(() => {
+    fetchPizza(); 
+    }, [])
 
   // GET route to display pizzas, /api/pizza
   const fetchPizza = () => {
