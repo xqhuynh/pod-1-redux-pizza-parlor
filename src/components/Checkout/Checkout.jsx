@@ -1,6 +1,8 @@
-
+import { useSelector, useDispatch } from 'react-redux'; 
 
 function Checkout (){
+    // const dispatch = useDispatch();  
+    const pizzaList = useSelector(store => store.pizzaList);
 
     function onCheckout(){
         window.alert("Order Submitted!");
@@ -9,9 +11,9 @@ function Checkout (){
         // [] navigate back to the home page 
     };
 
-    return(
+    // create a function to get total cost of pizzas in cart 
 
-        // [] 
+    return(
 
         <>
             <h2>Step 3: Checkout</h2>
@@ -28,14 +30,12 @@ function Checkout (){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Pizza 1</td>
-                        <td>19.95</td>
-                    </tr>
-                    <tr>
-                        <td>Pizza 12</td>
-                        <td>19.95</td>
-                    </tr>
+                {pizzaList.map((pizza) => {
+                    return <tr key={pizza.id} >
+                        <td>{pizza.name}</td>
+                        <td>{pizza.price}</td>
+                        </tr>
+                })} 
                 </tbody>
             </table>
 
@@ -52,4 +52,3 @@ function Checkout (){
 }
 
 export default Checkout; 
-
