@@ -3,9 +3,10 @@ import axios from 'axios';
 import './App.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-
 // import components
 import PizzaList from '../Home/Home';
+
+import Admin from '../Admin/Admin';
 
 function App() {
   // call useDispatch 
@@ -42,6 +43,8 @@ function App() {
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
       <PizzaList />  
+      <Admin />
+    
     </div>
   );
 }
