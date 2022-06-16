@@ -1,7 +1,27 @@
-import './Admin.css'
+import './Admin.css';
+import axios from 'axios'
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const Admin = () => {
+    const dispatch = useDispatch();
 
+    const orderInfo = useSelector(store => store.orderInformation)
+
+    useEffect(() => {
+        getOrderInformation();
+    }, [])
+
+    const getOrderInformation = () => {
+        axios.get('/api/order')
+            .then(res => {
+                dispatch({
+                    type: 'GET_ORDER_INFORMATION',
+                    payload: res.data
+                })
+            })
+    }
 
     return (
         <>
@@ -15,12 +35,20 @@ const Admin = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Chris</td>
-                    <td>4/5/2022 at 10:00AM</td>
-                    <td>Delivery</td>
-                    <td>$39.79</td>
-                </tr>
+
+                    {orderInfo.map((item) => {
+                        return(
+                        <>
+                        <tr>
+                            <td>{item.customer_name}</td>
+                            <td>{item.time}</td>
+                            <td>{item.type}</td>
+                            <td>{item.total}</td>
+                        </tr>
+                        </>
+                        )
+                    })}
+
             </tbody>
            </table>
         </>
