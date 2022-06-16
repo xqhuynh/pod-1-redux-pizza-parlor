@@ -40,18 +40,7 @@ function App() {
   return (
   <Router>
     <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
-      </header>
-  
-      <PizzaList /> 
-      <Checkout />
-      <CustomerInfoForm/>
-      <Admin />
-
     </div>
-
-    
       <div className='App'>
         <header className='App-header'>
           <h1 className='App-title'>Prime Pizza</h1>
