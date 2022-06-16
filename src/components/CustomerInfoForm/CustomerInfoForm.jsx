@@ -17,11 +17,9 @@ function CustomerInfoForm() {
             payload:{
                 name,
                 address,
-                
-
-                
+                city,
+                zip     
             }
-           
         })
 
         console.log('In on submit');
