@@ -12,9 +12,11 @@ function CustomerInfoForm() {
     const [pickup_or_delivery, set_Pickup_or_delivery] = useState('pickup');
 
     const [customerInfo, setCustomerInfo] = useState([]);
+    
     const handleChange = (event) => {
         set_Pickup_or_delivery(event.target.value)
     }
+   
     function onSubmitCustomer(event) {
         event.preventDefault();
 
