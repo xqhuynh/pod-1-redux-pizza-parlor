@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+
+import Checkout from '../Checkout/Checkout';
+
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 // import components
@@ -8,7 +11,11 @@ import PizzaList from '../Home/Home';
 
 import Admin from '../Admin/Admin';
 
+
+
+
 import CustomerInfoForm from '../CustomerInfoForm/CustomerInfoForm';
+
 function App() {
   // call useDispatch 
   const dispatch = useDispatch();
@@ -43,11 +50,20 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+
+
+
+      <Checkout />
+  
+
+
       
        <CustomerInfoForm/>
+
       <PizzaList />  
       <Admin />
     
+
     </div>
   );
 }
