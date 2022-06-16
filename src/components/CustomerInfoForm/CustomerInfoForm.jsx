@@ -1,5 +1,6 @@
 import react from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux'
 
 function CustomerInfoForm() {
     console.log('In Customer Info Form');
@@ -9,18 +10,19 @@ function CustomerInfoForm() {
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
 
+    const [customerInfo, setCustomerInfo ] = useState({});
+
     function onSubmitCustomer( event ) {
         event.preventDefault();
 
-        dispatch({
-            type: 'CUSTOMER_FORM',
-            payload:{
-                name,
-                address,
-                city,
-                zip     
-            }
-        })
+        setCustomerInfo({
+            name,
+            address,
+            city,
+            zip
+        });
+
+        console.log('customer info is',customerInfo);
 
         console.log('In on submit');
 
