@@ -21,6 +21,9 @@ const orderInformation = (state = [], action) => {
     switch(action.type){
         case 'GET_ORDER_INFORMATION':
             return action.payload
+    }
+    return state;
+}
 // checkout reducer
 const cart = (state = [], action) => {
     switch (action.type) {
