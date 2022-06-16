@@ -12,6 +12,10 @@ import PizzaList from '../Home/Home';
 import Admin from '../Admin/Admin';
 
 
+
+
+import CustomerInfoForm from '../CustomerInfoForm/CustomerInfoForm';
+
 function App() {
   // call useDispatch 
   const dispatch = useDispatch();
@@ -48,8 +52,13 @@ function App() {
       <p>Pizza is great.</p>
 
 
+
       <Checkout />
   
+
+
+      
+       <CustomerInfoForm/>
 
       <PizzaList />  
       <Admin />

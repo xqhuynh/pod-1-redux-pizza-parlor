@@ -49,7 +49,13 @@ After starting up the server, the following routes should be available. You can 
 
 `/api/order`
 
-**Post Data** should be an object that contains user information, *customer name*, *street address*, *city*, *zip*, *order_total* and an array of pizza id's as object. 
+**Post Data** should be an object that contains user information, 
+*customer name*,
+ *street address*, 
+ *city*,
+  *zip*, 
+  *order_total* 
+  *an array of pizza id's as object.*
 
 In Postman, select the Body tab, select Raw radio button, and then a blue dropdown appears and select JSON.
 
@@ -85,6 +91,10 @@ In Postman, select the Body tab, select Raw radio button, and then a blue dropdo
 Your client has asked your team to build a pizza ordering system.
 
 ### ORDER - SELECT PIZZA
+* Display all of the pizzas on DOM *
+* Allow user to ADD or REMOVE each pizza *
+* User should have 1 of each PIZZA  in cart for base *
+* Show total cost of Pizzas *
 
 When visiting [http://localhost:3000/](http://localhost:3000/) display all of the pizzas on the screen. Allow users to add or remove each pizza they would like to order. **For base mode, only allow the user to have one of each pizza in their cart.** Show the total cost of items in the cart in the top right of this page. 
 
@@ -92,13 +102,29 @@ This page should have a next button that brings the user to the **enter order de
 
 ![Select Pizza View](wireframes/screen-one.png)
 
-### ORDER - ENTER CUSTOMER INFORMATION
-
-Collect user information, *name*, *street address*, *city* and *zip*. This page should have an option to select pickup vs. delivery. The total cost of the order should appear in the top right of this page. This page should have a next button that brings the user to the **checkout** page.
+### ORDER - ENTER CUSTOMER INFORMATION -- Tarek
+Form
+Collect user information, 
+* name *, 
+* street address *, 
+* city *
+* zip *.
+---------- 
+- Option -
+----------
+* pickup or delivery *
+Form
+------------------------------
+- Upper Right Corner Of Page -
+------------------------------
+* next button link brings to ---> Checkoutpage
+This page should have an option to select pickup vs. delivery. The total cost of the order should appear in the top right of this page. This page should have a next button that brings the user to the **checkout** page.
 
 ![Select Pizza View](wireframes/screen-two.png)
 
 ### ORDER - CHECKOUT
+
+!!***TOTALS_CANNOT_BE_MODIFIED_BY_USER***!!
 
 Users should not be able to modify item totals on this screen. When they click checkout, the user information, order total and array of pizzas should be sent to the server. After the checkout is complete, navigate the user back to the **select pizza** page AND clear out the reducers as appropriate. Each order should begin with "clean" order data (cart, address, etc).
 
