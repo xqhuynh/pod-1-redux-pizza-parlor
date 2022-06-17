@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
+import { Link } from "react-router-dom";
 
 function PizzaList() {
   // Bring in useSelector for pizzaList
@@ -47,9 +48,11 @@ function PizzaList() {
           </div>
         ))}
       </div>
-      <Button className="next-button" size="md" variant="primary">
-        Next
-      </Button>
+      <Link to="/customer-info-form">
+        <Button className="next-button" size="md" variant="primary">
+          Next
+        </Button>
+      </Link>
     </>
   );
 }
