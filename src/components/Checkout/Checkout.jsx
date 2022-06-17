@@ -1,26 +1,39 @@
 import { useSelector, useDispatch } from 'react-redux'; 
+import { useHistory } from 'react-router-dom';
 
-function Checkout (){
-    // const dispatch = useDispatch();  
-    const pizzaList = useSelector(store => store.pizzaList);
+
+function Checkout ({customerInfo}){
+    const history = useHistory();
+    const dispatch = useDispatch();  
+    const cart = useSelector(store => store.cart);
+
+    let info = {
+        customer_name:customerInfo.name, 
+        street_address:customerInfo.address, 
+        city:customerInfo.city, 
+        zip:customerInfo.zip,
+        type:customerInfo.type  
+    }
 
     function onCheckout(){
         window.alert("Order Submitted!");
         // [] post route to the DB 
-        // [] clear cart reducer
-        // [] navigate back to the home page 
-    };
-
-    // create a function to get total cost of pizzas in cart 
-
+        axios.post(`/api/order`, info)
+        .then(() => {
+            // [] clear cart reducer
+            dispatch({ type: 'CLEAR_CART' }); 
+                    
+            history.push('/' );
+    });
+}
     return(
 
         <>
-            <h2>Step 3: Checkout</h2>
-            <p> Customer Name</p>
-            <p> Customer Address </p>
-            <p> Customer Address </p>
-            <h4> Delivery or Pickup </h4>
+            <h2> Step 3: Checkout </h2>
+            <p> {customerInfo.name} </p>
+            <p> {customerInfo.address} </p>
+            <p> {customerInfo.city}, {customerInfo.zip} </p>
+            <h4> {customerInfo.type} </h4>
 
             <table>
                 <thead>
@@ -30,7 +43,7 @@ function Checkout (){
                     </tr>
                 </thead>
                 <tbody>
-                {pizzaList.map((pizza) => {
+                {cart.map((pizza) => {
                     return <tr key={pizza.id} >
                         <td>{pizza.name}</td>
                         <td>{pizza.price}</td>

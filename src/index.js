@@ -8,6 +8,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+
 // pizzaList reducer
 const pizzaList = (state = [], action) => {
     switch (action.type) {
@@ -30,7 +31,8 @@ const cart = (state = [], action) => {
     switch (action.type) {
         case 'SET_CART':
             return[...state, action.payload];
-
+        case 'CLEAR_CART':
+            return[]; 
     }
     return state;
 }

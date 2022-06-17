@@ -1,19 +1,18 @@
 import react from 'react';
 import { useState } from 'react';
+
 import './CustomerInfoForm.css';
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
-function CustomerInfoForm() {
+
+function CustomerInfoForm({setCustomerInfo})
     console.log('In Customer Info Form');
-    // setting loacl state
+    // setting local state
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
-
     const [pickup_or_delivery, set_Pickup_or_delivery] = useState('pickup');
-
-    const [customerInfo, setCustomerInfo] = useState([]);
 
     const handleChange = (event) => {
         set_Pickup_or_delivery(event.target.value)
@@ -21,8 +20,6 @@ function CustomerInfoForm() {
 
     function onSubmitCustomer(event) {
         event.preventDefault();
-
-
 
         setCustomerInfo({
             name,
