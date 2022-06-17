@@ -1,13 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 
 function PizzaList() {
-  // Bring in useSelector
+  // Bring in useSelector for pizzaList
   const pizzaList = useSelector((store) => store.pizzaList);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -31,7 +31,16 @@ function PizzaList() {
                 </Card.Text>
               </Card.Body>
               <Card.Text className="price-text">${pizza.price}</Card.Text>
-              <Button size="md" variant="primary">
+              <Button
+                onClick={() =>
+                  dispatch({
+                    type: "SET_CART",
+                    payload: [pizza.name, pizza.price],
+                  })
+                }
+                size="md"
+                variant="primary"
+              >
                 Add
               </Button>
             </Card>
