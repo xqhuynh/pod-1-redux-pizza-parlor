@@ -5,7 +5,7 @@ import './CustomerInfoForm.css';
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
 
-function CustomerInfoForm({setCustomerInfo})
+function CustomerInfoForm({setCustomerInfo}){
     console.log('In Customer Info Form');
     // setting local state
     const [name, setName] = useState('');
