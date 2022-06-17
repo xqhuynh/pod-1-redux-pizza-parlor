@@ -48,6 +48,7 @@ function PizzaList() {
           </div>
         ))}
       </div>
+
       <Link to="/customer-info-form">
         <Button className="next-button" size="md" variant="primary">
           Next
