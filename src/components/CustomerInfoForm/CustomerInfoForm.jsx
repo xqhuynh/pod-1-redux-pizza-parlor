@@ -44,50 +44,65 @@ function CustomerInfoForm() {
             {/* Setting on submit funtion */}
             <form onSubmit={onSubmitCustomer}>
 
-                <div>
-                    <h3>Step 2: Customer Information</h3>
-                    
-                    <div className='radioBtns' onChange={handleChange}>
-                        <input type="radio" id="pickup" name="pickup_or_delivery"
+
+                <h3>Step 2: Customer Information</h3>
+                <div className='inputContainer'>
+
+
+
+                    <div className='textInputs'>
+                        <div>
+                            <input className='inputs' id="name" type="text" placeholder="Name"
+                                onChange={e => setName(e.target.value)}
+                                value={name}
+                            />
+                        </div>
+                        <div>
+                            <input className='inputs' id="address" placeholder="Street Address"
+                                onChange={e => setAddress(e.target.value)}
+                                value={address}
+                            />
+                        </div>
+                        <div>
+
+
+                            <input className='inputs' id="city" type="text" placeholder="City"
+                                onChange={e => setCity(e.target.value)}
+                                value={city}
+                            />
+                        </div>
+
+                        <div>
+                            <input className='inputs' id="zip" type="number" placeholder="Zip"
+                                onChange={e => setZip(e.target.value)}
+                                value={zip}
+                            />
+                        </div>
+
+                    </div>
+
+                    <div className='radioBtnInputs' onChange={handleChange}>
+
+                        <input className="radioInputs" type="radio" id="pickup" name="pickup_or_delivery"
                             value="Pickup"
                         />
                         <label htmlFor="pickup">Pickup</label><br />
 
-                        <input type="radio" id="delivery" name="pickup_or_delivery"
+                        <input className="radioInputs" type="radio" id="delivery" name="pickup_or_delivery"
                             value="Delivery"
                         />
                         <label htmlFor="delivery">Delivery</label><br />
                     </div>
 
 
-                    <div className='textInputs'>
-
-                        <input id="name" type="text" placeholder="Name"
-                            onChange={e => setName(e.target.value)}
-                            value={name}
-                        /><p></p>
-                        <input id="address" placeholder="Street Address"
-                            onChange={e => setAddress(e.target.value)}
-                            value={address}
-                        /><p></p>
-                        <input id="city" type="text" placeholder="City"
-                            onChange={e => setCity(e.target.value)}
-                            value={city}
-                        /><p></p>
-                        <input id="zip" type="number" placeholder="Zip"
-                            onChange={e => setZip(e.target.value)}
-                            value={zip}
-                        /><p></p>
-
-                    </div>
-
                 </div>
-                <Link to={'/checkout'} >
-                    <Button type="submit" className="next-button" size="md" variant="primary">
-                        Next
-                    </Button>
-                    {/* <button type="submit">NEXT</button> */}
-                </Link>
+                <div className='formBtn'>
+                    <Link to={'/checkout'} >
+                        <Button type="submit" className="next-button" size="md" variant="primary">
+                            Next
+                        </Button>
+                    </Link>
+                </div>
             </form>
         </>
     )
