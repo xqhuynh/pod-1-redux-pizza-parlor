@@ -1,9 +1,10 @@
 import react from 'react';
 import { useState } from 'react';
 
-function CustomerInfoForm() {
+function CustomerInfoForm({setCustomerInfo}) {
+
     console.log('In Customer Info Form');
-    // setting loacl state
+    // setting local state
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
@@ -11,7 +12,6 @@ function CustomerInfoForm() {
 
     const [pickup_or_delivery, set_Pickup_or_delivery] = useState('pickup');
 
-    const [customerInfo, setCustomerInfo] = useState([]);
     
     const handleChange = (event) => {
         set_Pickup_or_delivery(event.target.value)
@@ -19,8 +19,6 @@ function CustomerInfoForm() {
    
     function onSubmitCustomer(event) {
         event.preventDefault();
-
-
 
         setCustomerInfo({
             name,

@@ -6,13 +6,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Checkout from "../Checkout/Checkout";
 import { HashRouter as Router, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import components
 import PizzaList from "../PizzaList/PizzaList";
 import Admin from "../Admin/Admin";
 import CustomerInfoForm from "../CustomerInfoForm/CustomerInfoForm";
 
 function App() {
+
+  // local state for custoemr info
+  const [customerInfo, setCustomerInfo] = useState([]);
+
   // call useDispatch
   const dispatch = useDispatch();
   // bring in useEffect to display pizza list 'fetchPizza(); when page loads
@@ -51,11 +55,11 @@ function App() {
         </Route>
 
         <Route path="/customer-info-form" exact>
-          <CustomerInfoForm />
+          <CustomerInfoForm setCustomerInfo={setCustomerInfo}/>
         </Route>
 
         <Route path="/checkout" exact>
-          <Checkout />
+          <Checkout customerInfo={customerInfo}/>
         </Route>
 
         <Route path="/admin" exact>
