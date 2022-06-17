@@ -1,7 +1,9 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 
 function PizzaList() {
   // Bring in useSelector
@@ -11,6 +13,11 @@ function PizzaList() {
     <>
       <div className="title-container">
         <h3 className="step-one">Step 1: Select Your Pizza</h3>
+
+        <h3 className="cart">
+          <ShoppingCartOutlined className="cart-icon" />
+          Total: $Placeholder
+        </h3>
       </div>
       <div className="pizza-container">
         {pizzaList.map((pizza) => (
@@ -31,6 +38,9 @@ function PizzaList() {
           </div>
         ))}
       </div>
+      <Button className="next-button" size="md" variant="primary">
+        Next
+      </Button>
     </>
   );
 }
