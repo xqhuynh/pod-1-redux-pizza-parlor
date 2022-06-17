@@ -3,38 +3,68 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 70px;
-  padding: 20px;
+  background-color: rgb(15, 49, 163);
+  height: 100px;
+  padding: 30px 30px 30px 50px;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 1.25rem;
+  text-align: left;
 }
 
 .App-title {
   font-size: 2em;
 }
 
+.step-one {
+  text-align: left;
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
 .pizza-container {
   display: flex;
+  gap: 50px;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
-.pizza-card {
-  width: 300px;
-  height: 425px;
-  border: 1px solid black;
+.description-text {
+  font-size: 0.9rem;
 }
 
-.picture {
-  width: 300px;
-  height: 150px;
+.price-text {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.pizza-button {
-  width: 300px;
-  height: 50px;
+.title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart {
+  padding-right: 30px;
+}
+
+.cart-icon {
+  margin-right: 30px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.btn {
+  width: 100%;
   font-size: 1.5rem;
+  height: 50px;
 }
 
+.next-button {
+  width: 250px;
+  height: 50px;
+  margin-bottom: 50px;
+  margin-left: 70%;
+}
