@@ -38,9 +38,11 @@ function PizzaList() {
           </div>
         ))}
       </div>
-      <Button className="next-button" size="md" variant="primary">
-        Next
-      </Button>
+      <Link to={"/customer-info-form"}>
+        <Button className="next-button" size="md" variant="primary">
+          Next
+        </Button>
+      </Link>
     </>
   );
 }

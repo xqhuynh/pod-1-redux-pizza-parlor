@@ -1,22 +1,23 @@
 import react from 'react';
 import { useState } from 'react';
 
-function CustomerInfoForm({setCustomerInfo}) {
+import './CustomerInfoForm.css';
+import { Link } from 'react-router-dom';
+import Button from "react-bootstrap/Button";
 
+function CustomerInfoForm({setCustomerInfo})
     console.log('In Customer Info Form');
     // setting local state
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
-
     const [pickup_or_delivery, set_Pickup_or_delivery] = useState('pickup');
 
-    
     const handleChange = (event) => {
         set_Pickup_or_delivery(event.target.value)
     }
-   
+
     function onSubmitCustomer(event) {
         event.preventDefault();
 
@@ -42,8 +43,8 @@ function CustomerInfoForm({setCustomerInfo}) {
 
                 <div>
                     <h3>Step 2: Customer Information</h3>
-
-                    <div onChange={handleChange}>
+                    
+                    <div className='radioBtns' onChange={handleChange}>
                         <input type="radio" id="pickup" name="pickup_or_delivery"
                             value="Pickup"
                         />
@@ -56,29 +57,34 @@ function CustomerInfoForm({setCustomerInfo}) {
                     </div>
 
 
+                    <div className='textInputs'>
 
+                        <input id="name" type="text" placeholder="Name"
+                            onChange={e => setName(e.target.value)}
+                            value={name}
+                        /><p></p>
+                        <input id="address" placeholder="Street Address"
+                            onChange={e => setAddress(e.target.value)}
+                            value={address}
+                        /><p></p>
+                        <input id="city" type="text" placeholder="City"
+                            onChange={e => setCity(e.target.value)}
+                            value={city}
+                        /><p></p>
+                        <input id="zip" type="number" placeholder="Zip"
+                            onChange={e => setZip(e.target.value)}
+                            value={zip}
+                        /><p></p>
 
-                    <input id="name" type="text" placeholder="Name"
-                        onChange={e => setName(e.target.value)}
-                        value={name}
-                    />
-                    <input id="address" placeholder="Street Address"
-                        onChange={e => setAddress(e.target.value)}
-                        value={address}
-                    />
-                    <input id="city" type="text" placeholder="City"
-                        onChange={e => setCity(e.target.value)}
-                        value={city}
-                    />
-                    <input id="zip" type="number" placeholder="Zip"
-                        onChange={e => setZip(e.target.value)}
-                        value={zip}
-                    />
-
-
+                    </div>
 
                 </div>
-                <button type="submit">NEXT</button>
+                <Link to={'/checkout'} >
+                    <Button type="submit" className="next-button" size="md" variant="primary">
+                        Next
+                    </Button>
+                    {/* <button type="submit">NEXT</button> */}
+                </Link>
             </form>
         </>
     )
